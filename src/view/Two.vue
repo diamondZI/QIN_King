@@ -15,8 +15,8 @@ const route=useRoute()
     
 <style scoped>
     div{
-            width: 500px;
-            height: 600px;
+            width: 31.25rem;
+            height: 37.5rem;
             position: absolute;
             left: 50%;
             border: 1px black solid;

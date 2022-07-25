@@ -22,8 +22,8 @@
     justify-content: space-around;
     flex-wrap: wrap;
         max-width: 62.5rem;
-        width: 1000px;
-        height: 1000px;
+        width: 62.5rem;
+        height: 62.5rem;
       z-index: 1;
     }
     .LitterPage{
