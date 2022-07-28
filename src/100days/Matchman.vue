@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // import { $ref } from '@vueuse/core'
 const el = ref<HTMLCanvasElement>()
+const foo = ref<HTMLDivElement>(null)
 const ctx = computed(() => el.value!.getContext('2d')!)
 interface Point {
   x: number
@@ -12,26 +13,27 @@ interface Branch {
   theta: number
 }
 function init() {
+
   ctx.value.strokeStyle = '#000'
  
   step({
-    start: { x: 200, y: 200 },
+    start: { x: 0, y: 0 },
     length: 10,
-    theta: Math.PI / 3,
+    theta: Math.PI / 4,
   })
 }
 let pendingTasks: Function[] = []
 function step(b: Branch, depth = 0) {
   const end = getEndPoint(b)
   drawBranch(b)
-  if (depth < 4 || Math.random() < 0.6) {
+  if (depth < 4 || Math.random() < 0.5) {
     pendingTasks.push(() => step({
       start: end,
       length: b.length + (Math.random() * 2 - 1),
       theta: b.theta - 0.2 * Math.random(),
     }, depth + 1))
   }
-  if (depth < 4 || Math.random() < 0.6) {
+  if (depth < 4 || Math.random() < 0.5) {
     pendingTasks.push(() => step({
       start: end,
       length: b.length + (Math.random() * 2 - 1),
@@ -73,15 +75,23 @@ function getEndPoint(b: Branch): Point {
   }
 }
 function drawBranch(b: Branch) {
+  console.log(getEndPoint(b).x);
+  
   lineTo(b.start, getEndPoint(b))
 }
+
 onMounted(() => {
+   el.value.style.width=100+'%'
+        el.value.style.height=100+'%'
+ 
   init()
 })
 </script>
 
 <template>
+<div ref='foo'>
   <canvas ref="el" width="500" height="600" scale-50 origin-top-left />
+</div>
 </template>
 <style  scoped>
 canvas{

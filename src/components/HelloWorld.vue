@@ -22,7 +22,7 @@ defineProps<{ msg: Function }>()
 <!-- / -->
 <template>
 <div class="Navigation_bar">
-<div @click="K(),obj.disp()"  ref='ON'>秦子豪</div>
+<div ref='ON'>秦子豪</div>
  <div
     style="
       display: flex;
@@ -42,7 +42,7 @@ defineProps<{ msg: Function }>()
 .Navigation_bar{
 position: fixed;
 width: 100%;
-height:3.25rem;
+height:8vh;
 z-index: 10000;
 display: flex;
 align-items: center;
@@ -50,7 +50,7 @@ align-items: center;
 }
 div{
     transition: .3s all ;
-    position: relative;
-    transform:matrix3d(30deg)
+    position:relative;
+
 }
 </style>
