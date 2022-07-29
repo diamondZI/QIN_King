@@ -1,18 +1,35 @@
 <template>
 
   <div ref="foo" class="p">
-<canvas id="myCanvas" ref="EL" width="100" height="100" @mousemove="click()" @touchmove='click()'> </canvas>  
+  <div class="box" v-if="style">
+  颜色<input type="color" @change="a(true,co)" ref="co">
+  大小 <input type="number" ref="nu" @change="a(false,nu)">
+  </div>
+  <div class="prompt" v-else @click="style=!style">🖊🎗️</div>
+<canvas  @click="style=false"  id="myCanvas" ref="EL" width="100" height="100" @mousemove="click(size,Color)" @touchmove='click()'> </canvas>  
   </div>
 </template>
     
 <script setup lang='ts'>
     import {useMouseInElement,useMousePressed,useMouse, logicAnd } from '@vueuse/core'
     import { Car,KEY } from '@/api/router.ts'
+import { match } from 'assert'
       
     const EL=ref<HTMLCanvasElement>(null)
-   const {elementX,elementY,x,y,elementPositionX,elementPositionY}=useMouseInElement(EL)
+   const {elementX,elementY,x,y,elementPositionX,elementPositionY,elementHeight,elementWidth}=useMouseInElement(EL)
     const ctx = computed(() => EL.value!.getContext('2d')!)
     const foo=ref(null)
+    const co=ref(null)
+    const nu=ref(null)
+    
+    function a(po:boolean,e:HTMLInputElement){
+      console.log(e);
+    if(po){
+      Color.value=e.value
+    }else{
+      size.value=e.value
+    }
+}
   function drwn(ctx:HTMLCanvasElement,x:number, y:number, radius:number,color:string){
       
        ctx.beginPath()
@@ -28,8 +45,11 @@
     x:number
     y:number
   }
+  const style:boolean=ref(false)
   let i=ref(0);
-  let j=ref(null);
+const size:number=ref(0.1)
+const Color:string=ref('red')
+
   function ij():X_Y{
          return {
         x:Math.random() *100,
@@ -37,9 +57,10 @@
         }
   }
   const color=['#FF5F5D','#3F7C85','#3F7C85','#72F2EB','#747E7E']
-  function click(){
-    // console.log(elementX.value-elementPositionX.value);
-drwn(ctx.value,elementX.value-elementPositionX.value,elementY.value-elementPositionY.value,2,'rgb(255, 255, 255,.9)')
+  function click(Size=0.1,color='red'){
+    const ratioy= (EL.value.offsetTop+elementHeight.value)/100
+    const ratiox=(EL.value.offsetLeft+elementWidth.value/100)
+    drwn(ctx.value,(x.value-elementPositionX.value)/ratiox,(y.value-elementPositionY.value)/ratioy,Size,color)
   }
  let framesCount=0
   function move()
@@ -57,16 +78,8 @@ drwn(ctx.value,elementX.value-elementPositionX.value,elementY.value-elementPosit
       
      cancelAnimationFrame(a)
     }
-    
-    // console.log();
-    
-  
-
-
    }
  function  init(){
-         //必须的
-
           EL.value.style.width=100+'%'
           EL.value.style.height=100+'%'
          move()
@@ -81,12 +94,22 @@ drwn(ctx.value,elementX.value-elementPositionX.value,elementY.value-elementPosit
 </script>
     
 <style scoped>
-#myCanvas {
- position: relative;
- z-index: 100;
+.box{
+  background-color: #f9a647;
+  position:fixed;
+  width: 100px;
+  height: 100px;
+ align-items: center;
+ justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+}
+input{
+  width: 90%;
 
 }
-.p{
-position: relative;
+.prompt{
+position: fixed;
 }
+
 </style>
