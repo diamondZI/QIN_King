@@ -22,14 +22,20 @@
 
     const pages=[{
 title:'MatchMan',
-time:'2022-7-6-15:54',
+time:'2022-7-26-15:54',
 author:'QIN_KING',
 path:'Matchman'
     },{
 title:'Free',
-time:'2022-7-6-15:54',
+time:'2022-7-26-15:54',
 author:'QIN_KING',
 path:'free'
+    },
+    {
+title:'Tree',
+time:'2022-7-28-13:12',
+author:'QIN_KING',
+path:'tree'
     }]
     
 </script>
@@ -63,6 +69,9 @@ align-items: center;
         color: #000;
     }
     ul:hover{
+        background: rgb(255, 255, 255,0.2);
+    }
+    ul:active{
         background: rgb(255, 255, 255,0.2);
     }
     .f{

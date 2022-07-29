@@ -1,5 +1,6 @@
 :root {
     list-style: none;
+    user-select: none;
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     /* font-size: 1rem;
     line-height: 1.5rem;

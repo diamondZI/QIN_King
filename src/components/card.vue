@@ -1,11 +1,17 @@
 <template>
-        <div class="card" ref="card" @mousemove="mouse()" @mousedown="mousedown()" @mouseup="mouseup(_)">
-       1
+        <div @click="a()" class="card" ref="card" @mousemove="mouse()" @mousedown="mousedown()" @mouseup="mouseup(_)">
+
         </div>
 </template>
     
 <script setup lang='ts'>
     import {useMouseInElement,useMousePressed,useMouse } from '@vueuse/core'
+        import { alert} from '@/api/creat.ts'
+function a() {
+    alert(card.value)
+    requestAnimationFrame( a())
+   
+}
     const card=ref(null)
     const { pressed } = useMousePressed({ target: card })
     const {x,y}=useMouse(card)
@@ -31,11 +37,10 @@ if(pressed.value&&disX.value>=0){
     
 <style scoped>
     .card{
-        display:inline-block    ;
-        position: absolute;
+        position: absolute ;
        border-radius: 50%;
-        width: 100%;
-        height: 100%;
+        width: 10vh;
+        height: 10vh;
         background-color: rgb(234,207,216,.3);
        
     }
