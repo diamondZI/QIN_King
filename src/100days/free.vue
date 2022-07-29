@@ -1,7 +1,7 @@
 <template>
 
   <div ref="foo" class="p">
-<canvas id="myCanvas" ref="EL" width="100" height="100" @mousemove="click()"> </canvas>  
+<canvas id="myCanvas" ref="EL" width="100" height="100" @mousemove="click()" @touchmove='click()'> </canvas>  
   </div>
 </template>
     
@@ -14,12 +14,13 @@
     const ctx = computed(() => EL.value!.getContext('2d')!)
     const foo=ref(null)
   function drwn(ctx:HTMLCanvasElement,x:number, y:number, radius:number,color:string){
+      
        ctx.beginPath()
-        ctx.arc(x, y, radius, 10, 2* Math.PI, false);
-        // ctx.arc(150,150,50,0,2*Math.PI);
-		// ctx.stroke();
+     ctx.fillStyle = color;
+        ctx.arc(x, y, radius, 0, 2*Math.PI,true);
+		ctx.stroke();
 
-        ctx.fillStyle = color;
+        
         ctx.fill();
         ctx.closePath();      
   }
@@ -49,10 +50,10 @@ drwn(ctx.value,elementX.value-elementPositionX.value,elementY.value-elementPosit
      i.value++  
     if (framesCount % 3 === 0)
    
-    drwn(ctx.value,ij().x,ij().y,2,color[l])
+    drwn(ctx.value,ij().x,ij().y,1,color[l])
     move()
   })
-    if(i.value>400){
+    if(i.value>1000){
       
      cancelAnimationFrame(a)
     }
@@ -83,9 +84,9 @@ drwn(ctx.value,elementX.value-elementPositionX.value,elementY.value-elementPosit
 #myCanvas {
  position: relative;
  z-index: 100;
+
 }
 .p{
 position: relative;
-
 }
 </style>
