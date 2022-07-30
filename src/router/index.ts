@@ -4,6 +4,7 @@ import TWO from "@/view/Two.vue";
 import Matchman from "@/100days/Matchman.vue";
 import free from "@/100days/free.vue";
 import tree from "@/100days/tree.vue";
+import pagination from "@/100days/pagination.vue";
 const routes = [
   {
     path: "/",
@@ -28,6 +29,10 @@ const routes = [
       {
         path: "tree",
         component: tree,
+      },
+      {
+        path: "pagination",
+        component: pagination,
       },
     ]
   },

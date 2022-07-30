@@ -84,6 +84,7 @@ const Color:string=ref('red')
           EL.value.style.height=100+'%'
          move()
          
+         
  }
       
   
@@ -107,6 +108,9 @@ const Color:string=ref('red')
 input{
   width: 90%;
 
+}
+.p{
+  position:absolute;
 }
 .prompt{
 position: fixed;

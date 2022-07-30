@@ -18,9 +18,7 @@ const route=useRoute()
             height: 80vh;
             position: absolute;
             left: 50%;
-            border: 1px black solid;
-            background: rgba(0, 0, 0, 0.1);
-
+            background: rgba(255, 255, 255, 0.1);
             transform: translateX(-50%);
     }
     @media  only screen and (max-width: 600px) {

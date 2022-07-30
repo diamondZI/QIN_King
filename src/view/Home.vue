@@ -36,6 +36,12 @@ title:'Tree',
 time:'2022-7-28-13:12',
 author:'QIN_KING',
 path:'tree'
+    },
+     {
+title:'pagination',
+time:'2022-7-30-13:12',
+author:'QIN_KING',
+path:'pagination'
     }]
     
 </script>
