@@ -42,6 +42,18 @@ title:'pagination',
 time:'2022-7-30-13:12',
 author:'QIN_KING',
 path:'pagination'
+    },
+     {
+title:'Shuttle_box',
+time:'2022-7-30-13:12',
+author:'QIN_KING',
+path:'Shuttle_box'
+    },
+     {
+title:'essay',
+time:'2022-8-5-15:55',
+author:'QIN_KING',
+path:'essay'
     }]
     
 </script>

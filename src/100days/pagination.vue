@@ -1,7 +1,7 @@
 <template>
 <div class="box">
 <div class="pages">
-
+{{INDEX }}
 </div>
 <div class="number" >
 <li @click="app()"> ⬅️ </li>

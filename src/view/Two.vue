@@ -1,6 +1,6 @@
 <template>
-        <div>
-        <router-view></router-view>
+        <div >
+        <router-view ></router-view>
         </div>
 </template>
     
@@ -20,10 +20,7 @@ const route=useRoute()
             left: 50%;
             background: rgba(255, 255, 255, 0.1);
             transform: translateX(-50%);
+            transition: 1s all linear;
     }
-    @media  only screen and (max-width: 600px) {
-            div{
-                    width: 80vw;
-            }
-    }
+  
 </style>

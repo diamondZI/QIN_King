@@ -16,24 +16,20 @@ export class Car {
         this.x = x 
         this.y = y
         this.div = div
-    }  
-    // 方法 
-    left():void { 
-       this.x-=10
-       this.div.style.left=this.x+'px'
     } 
-    right():void { 
-       this.x+=10
-       this.div.style.left=this.x+'px'
+    dowm(){
+            this.div.style.content='move'
+            
+
     } 
-    top():void { 
-       this.y-=10
-       this.div.style.top=this.y+'px'
-    } 
-    down():void { 
-       this.y+=10
-       this.div.style.top=this.y+'px'
-    } 
+    move(){
+            this.div.style.left=this.x+'px'
+            this.div.style.top=this.y+'px'
+   }
+   up(){
+
+   }
+   
 }
 export  function KEY(obj:any){
     window.addEventListener("keydown", function(e) {

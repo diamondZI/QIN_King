@@ -2,10 +2,8 @@
     list-style: none;
     user-select: none;
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 1.2vw;
-    /* font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 400; */
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
     color-scheme: light dark;
     color: rgba(201, 201, 201, 0.87);
     background-color: #131124;
@@ -71,6 +69,8 @@ button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
+
+.animate__heartBeat {}
 
 #app {
     max-width: 1280px;
