@@ -69,10 +69,10 @@ console.log(li);
        })
     }
     function left (){
-        if(copydata.value!==[]){
-copydata2.value=copydata2.value.concat(copydata.value)
+        if(copydata.value.length){
+      copydata2.value=copydata2.value.concat(copydata.value)
 
-copydata.value=[]
+             copydata.value=[]
         }
 
     }

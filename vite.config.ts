@@ -6,6 +6,15 @@ import { resolve } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
+  server:{
+    proxy: {
+      "/api": {
+        target: "https://shengapi.cn/api/qqyy.php",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),

@@ -8,19 +8,21 @@ import tree from "@/100days/tree.vue";
 import pagination from "@/100days/pagination.vue";
 import Shuttle_box from "@/100days/Shuttle_box.vue";
 import essay from "@/100days/essay.vue";
+import T2048 from "@/100days/2048.vue";
 const routes = [
   {
+   
     path: "/",
     name: "home",
     component: home,
-    
   },
   {
+    
     path: "/login",
     name: "login",
     component: login,
-    
   },
+  
   {
     path: "/TWO",
     name: "TWO",
@@ -44,6 +46,10 @@ const routes = [
         component: tree,
       },
       {
+        path: "2048",
+        component: T2048,
+      },
+      {
         path: "pagination",
         component: pagination,
       },
@@ -54,8 +60,26 @@ const routes = [
     ]
   },
 ];
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes: routes,
 });
+import { useUsersStore } from "../store/use"
+import {ponit1} from '../hooks/alret/alret'
+router.beforeEach((to) => {
+  const store = useUsersStore()
+  const {tonken}=store 
+  if (
+    // 检查用户是否已登录
+    !tonken &&
+    // ❗️ 避免无限重定向
+    to.name !== 'login'
+  ) {
+   
+    ponit1.alert()
+    // 将用户重定向到登录页面
+    return { name: 'login' }
+  }
+})
 export default router;

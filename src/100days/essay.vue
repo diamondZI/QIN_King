@@ -1,13 +1,13 @@
 <template>
-     <div style="border: 1px solid #ccc">
+     <div class=" text-sm absolute md:w-1/2 lg:1/2"  >
       <Toolbar
-        style="border-bottom: 1px solid #ccc"
+        class="sm:space-x-1  "
         :editor="editorRef"
         :defaultConfig="toolbarConfig"
         :mode="mode"
       />
       <Editor
-        style="height: 500px; overflow-y: hidden;"
+        style="height: 31.25rem; overflow-y: hidden;"
         v-model="valueHtml"
         :defaultConfig="editorConfig"
         :mode="mode"
@@ -42,6 +42,9 @@ const editorRef = shallowRef()
         if (editor == null) return
         editor.destroy()
     })
+    function a(){
+        console.log(valueHtml.value);
+    }
 
     const handleCreated = (editor) => {
       editorRef.value = editor // 记录 editor 实例，重要！

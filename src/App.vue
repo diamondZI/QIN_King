@@ -8,7 +8,9 @@ const router=useRouter()
 
 <template>
 <div class="BOX">
-<HelloWorld :msg='a' ></HelloWorld>
+
+<HelloWorld  ></HelloWorld>
+
  <router-view  class="view" ></router-view>
  </div>
 </template>

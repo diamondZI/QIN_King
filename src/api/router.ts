@@ -26,9 +26,7 @@ export class Car {
             this.div.style.left=this.x+'px'
             this.div.style.top=this.y+'px'
    }
-   up(){
-
-   }
+  
    
 }
 export  function KEY(obj:any){

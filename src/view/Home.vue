@@ -54,6 +54,12 @@ title:'essay',
 time:'2022-8-5-15:55',
 author:'QIN_KING',
 path:'essay'
+    },
+     {
+title:'2048',
+time:'2022-8-5-15:55',
+author:'QIN_KING',
+path:'2048'
     }]
     
 </script>
@@ -72,7 +78,7 @@ align-items: center;
         height: 92vh;
       z-index: 1;
       background-color: #f9a647;
-     
+ 
     }
     .LitterPage{
 
