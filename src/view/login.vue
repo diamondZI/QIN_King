@@ -1,8 +1,6 @@
 <template>
-        <div class="  mx-auto sm:w-3/4 md:w-2/4 fixed inset-x-0 top-10 border-double border-4 border-light-blue-500 ">
+        <div class=" w-11/12  mt-16 mx-auto sm:w-3/4 md:w-2/4 fixed inset-x-0 top-10 border-double border-4 border-light-blue-500 ">
         <div> 
-        <p>{{tonken}}</p>
-        
         </div>
         <div>
         <form class=" flex  items-center py-32 justify-center flex-col text-blue-500">

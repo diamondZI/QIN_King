@@ -89,8 +89,8 @@ align-items: center;
         width: 90vw;
         height: 2000px;
       z-index: 1;
-      background-color: #f9a647;
-      margin-top:4rem;
+      margin-top:5rem;
+      border: double rgb(255,242,8) .25rem;
  
     }
     .LitterPage{
@@ -104,16 +104,18 @@ align-items: center;
         display: flex;
         cursor: pointer;
         color: #000;
+transition: .3s all linear;
     }
     ul:hover{
-        background: rgb(255, 255, 255,0.2);
+        width: 20.5rem;
+        background: rgba(255, 251, 41,.5);
     }
     ul:active{
         background: rgb(255, 255, 255,0.2);
     }
     .f{
         padding: 2px;
-        color: rgb(255, 255, 255);
+        color: rgb(110,231,183);
         font-size: 10px;
         margin-left: 10px;
     }

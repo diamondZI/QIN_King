@@ -5,7 +5,7 @@ import {a,Car} from '@/api/router.ts'
 <template>
 <div class="Navigation_bar">
 <div ref='ON'  class=" text-2xl text-green-300 hover:text-gray-400" >QIN_KING</div>
- <div class="w-1/5 flex justify-around">
+ <div class="w-2/5 flex justify-around sm:w-1/5">
   <router-link to="/login">登录</router-link>
     <router-link to="/">100days</router-link>
   </div>
