@@ -1,12 +1,12 @@
 <template>
-        <div  class="Shuttle">
-        <div  class="lol">
+        <div  class="full flex bg-white justify-around">
+          <div  class="w-1/2 bg-red-100  ">
     
             <select id="sexlist" ref='myDatalist' @change="a()">
              <option v-for="(item,index) in data" :key="index">{{item.name}}</option>
             </select>
             <div >
-<div class="li  animate__animated animate__bounce" v-if="options.classify">
+         <div class="li  animate__animated animate__bounce" v-if="options.classify">
             <li v-for="(time,index) in options.classify" :key="index" ref="li">           
            <input type="radio" id="dewey" name="drone" :value='tiem' @click="remove(time,index)">
             {{time}}
@@ -14,11 +14,11 @@
             </div>
             </div>
         </div>
-        <div class="btn">
-        <button> right </button>
-        <button @click="left()"> left </button>
+        <div class="w-1/3 flex flex-col  justify-around">
+        <button class="bth1 w-full"> right </button>
+        <button class="bth1 w-full" @click="left()"> left </button>
         </div>
-        <div  class="lol">
+        <div  class="w-1/2 bg-red-100  ">
          <li v-for="(time,index) in copydata2" :key="index" >
            <input type="radio" id="dewey" name="drone" :value='tiem' @click="remove(time)">
             {{time}}
@@ -84,24 +84,5 @@ const myDatalist=ref(null)
 </script>
     
 <style scoped>
-.lol{
-    background-color: rgb(250, 177, 177);
-    height: 100%;
-    width: 40%;
-    transition: .3s all linear;
-}
-.Shuttle{
-        display: flex;
-        background-color: #fff;
 
-
-}
-.li{
-    transition: 1s all linear;
-}
-.btn{
-width: 20%;
-    display: flex;
-flex-direction: column;
-}
 </style>

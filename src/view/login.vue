@@ -1,5 +1,5 @@
 <template>
-        <div class=" mx-auto sm:w-3/4 md:w-2/4 fixed inset-x-0 top-10 border-double border-4 border-light-blue-500 ">
+        <div class="  mx-auto sm:w-3/4 md:w-2/4 fixed inset-x-0 top-10 border-double border-4 border-light-blue-500 ">
         <div> 
         <p>{{tonken}}</p>
         
@@ -16,14 +16,14 @@
 </template>
     
 <script setup lang='ts'>
-    import { useUsersStore } from "@/store/use";
+    import  useStore  from "../store";
     import {storeToRefs } from 'pinia'
-const store = useUsersStore();
-const {tonken}=storeToRefs(store)
+const {use} = useStore();
+const {tonken}=storeToRefs(use)
 
 
 function gettonken(){
-store.tonken='100101'
+use.tonken='1001011'
 // setTimeout(()=>{
 //     store.tonken=null
 //     console.log(tonken);

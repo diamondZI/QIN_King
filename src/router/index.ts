@@ -9,6 +9,8 @@ import pagination from "@/100days/pagination.vue";
 import Shuttle_box from "@/100days/Shuttle_box.vue";
 import essay from "@/100days/essay.vue";
 import T2048 from "@/100days/2048.vue";
+import todo from "@/100days/todolist.vue";
+import show from "@/100days/show.vue";
 const routes = [
   {
    
@@ -38,6 +40,14 @@ const routes = [
         component: Shuttle_box,
       },
       {
+        path: "todo",
+        component: todo,
+      },
+      {
+        path: "show",
+        component: show,
+      },
+      {
         path: "free",
         component: free,
       },
@@ -65,11 +75,13 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: routes,
 });
-import { useUsersStore } from "../store/use"
+import  useStore  from "../store"
 import {ponit1} from '../hooks/alret/alret'
+import {storeToRefs} from 'pinia'
 router.beforeEach((to) => {
-  const store = useUsersStore()
-  const {tonken}=store 
+  const {use} = useStore();
+  const {tonken}=use
+  
   if (
     // 检查用户是否已登录
     !tonken &&

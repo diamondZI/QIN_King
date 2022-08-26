@@ -41,7 +41,7 @@ a:hover {
 }
 
 body {
-    overflow: hidden;
+    overflow: auto;
     margin: 0;
     display: flex;
     padding: 0;
@@ -84,5 +84,8 @@ body {
     }
     .input1:hover {
         @apply outline-none ring border-blue-300
+    }
+    .full {
+        @apply absolute w-full h-full transition-all;
     }
 }

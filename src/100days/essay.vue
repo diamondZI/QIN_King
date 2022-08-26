@@ -1,5 +1,5 @@
 <template>
-     <div class=" text-sm absolute md:w-1/2 lg:1/2"  >
+     <div class=" "  >
       <Toolbar
         class="sm:space-x-1  "
         :editor="editorRef"

@@ -4,15 +4,8 @@ import {a,Car} from '@/api/router.ts'
 
 <template>
 <div class="Navigation_bar">
-<div ref='ON'>秦子豪</div>
- <div
-    style="
-      display: flex;
-      justify-content: space-between;
-      width: 240px;
-      margin: 0 auto;
-    "
-  >
+<div ref='ON'  class=" text-2xl text-green-300 hover:text-gray-400" >QIN_KING</div>
+ <div class="w-1/5 flex justify-around">
   <router-link to="/login">登录</router-link>
     <router-link to="/">100days</router-link>
   </div>
@@ -26,14 +19,14 @@ import {a,Car} from '@/api/router.ts'
 position: fixed;
 width: 100%;
 height:8vh;
-z-index: 10000;
 display: flex;
+z-index:199;
 align-items: center;
-
+  background: radial-gradient(transparent, rgb(0, 0, 0) 3px);
+    background-size: 4px 4px;
+    backdrop-filter: blur(10px);
+color: rgb(255,242,8);
+justify-content: space-around;
 }
-div{
-    transition: .3s all ;
-    position:relative;
 
-}
 </style>

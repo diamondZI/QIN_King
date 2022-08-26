@@ -1,6 +1,6 @@
 <template>
 
-  <div ref="foo" class="p">
+  <div ref="foo" class="  relative w-full h-full">
   <div class="box" v-if="style">
   颜色<input type="color" @change="a(true,co)" ref="co">
   大小 <input type="number" ref="nu" @change="a(false,nu)">

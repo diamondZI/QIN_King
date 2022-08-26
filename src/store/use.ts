@@ -14,5 +14,8 @@ export const useUsersStore = defineStore('users', {
       this.count++
     },
   },
+  
   // 其它配置项
 })  
+
+export default useUsersStore

@@ -1,7 +1,6 @@
 <template>
     <div class="Page">
             
-            
     <div v-for="(i,index) in pages" :key="index" class="LitterPage">
           <ul @click="routerPath(router,i.path)">
           <li>{{i.title}}</li>
@@ -44,6 +43,12 @@ author:'QIN_KING',
 path:'pagination'
     },
      {
+title:'show',
+time:'2022-8-21-17:17',
+author:'QIN_KING',
+path:'show'
+    },
+     {
 title:'Shuttle_box',
 time:'2022-7-30-13:12',
 author:'QIN_KING',
@@ -60,7 +65,14 @@ title:'2048',
 time:'2022-8-5-15:55',
 author:'QIN_KING',
 path:'2048'
-    }]
+    },
+     {
+title:'todo',
+time:'2022-8-20-16:46',
+author:'QIN_KING',
+path:'todo'
+    },
+    ]
     
 </script>
     
@@ -75,9 +87,10 @@ path:'2048'
 align-items: center;
         max-width: 62.5rem;
         width: 90vw;
-        height: 92vh;
+        height: 2000px;
       z-index: 1;
       background-color: #f9a647;
+      margin-top:4rem;
  
     }
     .LitterPage{
