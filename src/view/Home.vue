@@ -1,5 +1,5 @@
 <template>
-    <div class="Page">
+    <div class="w-4/5 lg:w-2/3 md:h-4/5  border-yellow-300 border-double absolute flex flex-col justify-center items-center bg-pink-200">
             
     <div v-for="(i,index) in pages" :key="index" class="LitterPage">
           <ul @click="routerPath(router,i.path)">
@@ -79,9 +79,7 @@ path:'todo'
 <style scoped>
     .Page{
         color: #000;
-         position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+   
     display: flex;
     flex-direction: column;
 align-items: center;
@@ -89,7 +87,7 @@ align-items: center;
         width: 90vw;
         height: 2000px;
       z-index: 1;
-      margin-top:5rem;
+    
       border: double rgb(255,242,8) .25rem;
  
     }

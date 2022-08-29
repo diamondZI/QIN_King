@@ -1,6 +1,7 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory ,RouteRecordRaw } from "vue-router";
 import home from "@/view/Home.vue";
 import login from "@/view/login.vue";
+import combination_lock from "@/view/combination_lock.vue";
 import TWO from "@/view/Two.vue";
 import Matchman from "@/100days/Matchman.vue";
 import free from "@/100days/free.vue";
@@ -11,12 +12,19 @@ import essay from "@/100days/essay.vue";
 import T2048 from "@/100days/2048.vue";
 import todo from "@/100days/todolist.vue";
 import show from "@/100days/show.vue";
-const routes = [
+const routes:Array<RouteRecordRaw> = [
   {
    
     path: "/",
     name: "home",
     component: home,
+    alias: '/home'
+  },
+  {
+   
+    path: "/combination_lock",
+    name: "combination_lock",
+    component: combination_lock,
   },
   {
     
