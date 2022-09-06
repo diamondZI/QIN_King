@@ -75,8 +75,6 @@ function getEndPoint(b: Branch): Point {
   }
 }
 function drawBranch(b: Branch) {
-  console.log(getEndPoint(b).x);
-  
   lineTo(b.start, getEndPoint(b))
 }
 
