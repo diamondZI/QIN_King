@@ -72,6 +72,12 @@ time:'2022-8-20-16:46',
 author:'QIN_KING',
 path:'todo'
     },
+     {
+title:'NEW',
+time:'2022-9-6-20:00',
+author:'QIN_KING',
+path:'NEW'
+    },
     ]
     
 </script>

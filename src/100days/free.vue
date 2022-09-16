@@ -1,12 +1,12 @@
 <template>
 
-  <div ref="foo" class="  relative w-full h-full">
+  <div ref="foo" class="relative w-full h-full">
   <div class="box" v-if="style">
   颜色<input type="color" @change="a(true,co)" ref="co">
   大小 <input type="number" ref="nu" @change="a(false,nu)">
   </div>
   <div class="prompt" v-else @click="style=!style">🖊🎗️</div>
-<canvas  @click="style=false"  id="myCanvas" ref="EL" width="100" height="100" @mousemove="click(size,Color)" @touchmove='click()'> </canvas>  
+<canvas  @click="style=false"  id="myCanvas" ref="EL" width="100" height="100" @mousedown="IQIS(true)"  @touchmove='touhclick()' @mousemove="click(size,Color)" @mouseup="IQIS(false)"> </canvas>  
   </div>
 </template>
     
@@ -41,12 +41,17 @@ import { match } from 'assert'
         ctx.fill();
         ctx.closePath();      
   }
+  function IQIS(bol){
+    IQ.value=bol
+    click(size.value,Color.value)
+  }
   interface X_Y{
     x:number
     y:number
   }
   const style:boolean=ref(false)
   let i=ref(0);
+  const IQ:boolean=ref(0);
 const size:number=ref(0.1)
 const Color:string=ref('red')
 
@@ -57,11 +62,25 @@ const Color:string=ref('red')
         }
   }
   const color=['#FF5F5D','#3F7C85','#3F7C85','#72F2EB','#747E7E']
-  function click(Size=0.1,color='red'){
-    const ratioy= (EL.value.offsetTop+elementHeight.value)/100
-    const ratiox=(EL.value.offsetLeft+elementWidth.value/100)
-    drwn(ctx.value,(x.value-elementPositionX.value)/ratiox,(y.value-elementPositionY.value)/ratioy,Size,color)
-  }
+   const  click= function (Size=0.2,color='red'){
+           console.log(IQ.value);
+     if(IQ.value){
+ 
+        const ratioy= (EL.value.offsetTop+elementHeight.value)/100
+        const ratiox=(EL.value.offsetLeft+elementWidth.value)/100
+        
+        drwn(ctx.value,(x.value-elementPositionX.value)/ratiox,(y.value-elementPositionY.value)/ratioy,Size,color)
+      }else{
+        return 
+      }
+   }
+    const  touhclick= function (Size=0.2,color='red'){
+ 
+        const ratioy= (EL.value.offsetTop+elementHeight.value)/100
+        const ratiox=(EL.value.offsetLeft+elementWidth.value)/100
+        
+        drwn(ctx.value,(x.value-elementPositionX.value)/ratiox,(y.value-elementPositionY.value)/ratioy,Size,color)
+   }
  let framesCount=0
   function move()
    {

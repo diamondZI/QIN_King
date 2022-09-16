@@ -12,6 +12,7 @@ import essay from "@/100days/essay.vue";
 import T2048 from "@/100days/2048.vue";
 import todo from "@/100days/todolist.vue";
 import show from "@/100days/show.vue";
+import NEW from "@/100days/NEW.vue";
 const routes:Array<RouteRecordRaw> = [
   {
    
@@ -74,6 +75,10 @@ const routes:Array<RouteRecordRaw> = [
       {
         path: "essay",
         component: essay,
+      },
+      {
+        path: "NEW",
+        component: NEW,
       },
     ]
   },

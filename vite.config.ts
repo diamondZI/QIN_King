@@ -8,14 +8,10 @@ export default defineConfig({
   base: './',
   server:{
     proxy: {
-      "/api": {
-        target: "https://shengapi.cn/api/qqyy.php",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
     },
   },
   resolve: {
+    //别名
     alias: {
       '@': resolve(__dirname, 'src'),
       '@comp': resolve(__dirname, 'src/components')
