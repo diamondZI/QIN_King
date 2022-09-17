@@ -1,18 +1,22 @@
-import { createRouter, createWebHashHistory ,RouteRecordRaw } from "vue-router";
-import home from "@/view/Home.vue";
-import login from "@/view/login.vue";
-import combination_lock from "@/view/combination_lock.vue";
-import TWO from "@/view/Two.vue";
-import Matchman from "@/100days/Matchman.vue";
-import free from "@/100days/free.vue";
-import tree from "@/100days/tree.vue";
-import pagination from "@/100days/pagination.vue";
-import Shuttle_box from "@/100days/Shuttle_box.vue";
-import essay from "@/100days/essay.vue";
-import T2048 from "@/100days/2048.vue";
-import todo from "@/100days/todolist.vue";
-import show from "@/100days/show.vue";
-import NEW from "@/100days/NEW.vue";
+import {createRouter, createWebHashHistory ,RouteRecordRaw } from "vue-router";
+
+const home = () => import("@/view/Home.vue")
+const login = () => import("@/view/login.vue")
+const combination_lock = () => import("@/view/combination_lock.vue")
+const Two = () => import("@/view/Two.vue")
+const NotFound = () => import("@/view/NotFound.vue")
+const free = () => import("@/100days/free.vue")
+const tree = () => import("@/100days/tree.vue")
+const pagination = () => import("@/100days/pagination.vue")
+const Shuttle_box = () => import("@/100days/Shuttle_box.vue")
+const T2048 = () => import("@/100days/2048.vue")
+const essay = () => import("@/100days/essay.vue")
+const Matchman = () => import("@/100days/Matchman.vue")
+const todo = () => import("@/100days/todolist.vue")
+const NEW = () => import("@/100days/NEW.vue")
+const show = () => import("@/100days/show.vue")
+
+
 const routes:Array<RouteRecordRaw> = [
   {
    
@@ -37,7 +41,7 @@ const routes:Array<RouteRecordRaw> = [
   {
     path: "/TWO",
     name: "TWO",
-    component: TWO,
+    component: Two,
     children: [
      
       {
@@ -82,7 +86,11 @@ const routes:Array<RouteRecordRaw> = [
       },
     ]
   },
+  // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ];
+
+
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -90,20 +98,21 @@ const router = createRouter({
 });
 import  useStore  from "../store"
 import {ponit1} from '../hooks/alret/alret'
-import {storeToRefs} from 'pinia'
+
 router.beforeEach((to) => {
+  console.log(router.currentRoute.value.path);
+   
   const {use} = useStore();
   const {tonken}=use
-  
-  if (
+ if (
     // 检查用户是否已登录
     !tonken &&
     // ❗️ 避免无限重定向
     to.name !== 'login'
   ) {
-   
-    ponit1.alert()
+    // ponit1.alert()
     // 将用户重定向到登录页面
+  
     return { name: 'login' }
   }
 })
