@@ -1,11 +1,3 @@
-import home from '@/view/home.vue'
-console.log(home);
-
-export function a() {
-    console.log(
-        '1'
-    );
-}
 export class Car { 
     // 字段 
     x:number
@@ -19,16 +11,16 @@ export class Car {
     } 
     dowm(){
             this.div.style.content='move'
-            
-
     } 
     move(){
-            this.div.style.left=this.x+'px'
-            this.div.style.top=this.y+'px'
-   }
-  
-   
+        
+    
+                this.div.style.left = x + 7 + 'px';
+                this.div.style.top = y - 5 + 'px';
+    
+   } 
 }
+//自定义按键控制
 export  function KEY(obj:any){
     window.addEventListener("keydown", function(e) {
            switch (e.key) {

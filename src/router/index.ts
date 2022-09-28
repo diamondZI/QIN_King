@@ -1,6 +1,7 @@
 import {createRouter, createWebHashHistory ,RouteRecordRaw } from "vue-router";
 
 const home = () => import("@/view/Home.vue")
+const page = () => import("@/view/page.vue")
 const login = () => import("@/view/login.vue")
 const combination_lock = () => import("@/view/combination_lock.vue")
 const Two = () => import("@/view/Two.vue")
@@ -13,13 +14,13 @@ const T2048 = () => import("@/100days/2048.vue")
 const essay = () => import("@/100days/essay.vue")
 const Matchman = () => import("@/100days/Matchman.vue")
 const todo = () => import("@/100days/todolist.vue")
+const Gorun = () => import("@/100days/Gorun.vue")
 const NEW = () => import("@/100days/NEW.vue")
 const show = () => import("@/100days/show.vue")
 
 
 const routes:Array<RouteRecordRaw> = [
   {
-   
     path: "/",
     name: "home",
     component: home,
@@ -30,6 +31,12 @@ const routes:Array<RouteRecordRaw> = [
     path: "/combination_lock",
     name: "combination_lock",
     component: combination_lock,
+  },
+  {
+   
+    path: "/page",
+    name: "page",
+    component: page,
   },
   {
     
@@ -83,6 +90,10 @@ const routes:Array<RouteRecordRaw> = [
       {
         path: "NEW",
         component: NEW,
+      },
+      {
+        path: "Gorun",
+        component: Gorun,
       },
     ]
   },

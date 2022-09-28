@@ -7,6 +7,7 @@ import {a,Car} from '@/api/router.ts'
 <div ref='ON'  class=" text-2xl text-green-300 hover:text-gray-400" >QIN_KING</div>
  <div class="w-2/5 flex justify-around sm:w-1/5">
   <router-link to="/login">登录</router-link>
+  <router-link to="/page">MY_Pages</router-link>
   <router-link to="/combination_lock" class=" text-indigo-400">秘密</router-link>
     <router-link to="/">100days</router-link>
   </div>
