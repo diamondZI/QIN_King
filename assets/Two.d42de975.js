@@ -1,0 +1,1 @@
+import{d as s,c as a,a as e,o as t,f as r,z as o}from"./index.db7d7ef0.js";const d={class:"my-16 rounded-lg w-2/3 h-4/5 sm:w-1/3 absolute bg-gray-50 left-1/2 transform-gpu -translate-x-1/2"},n=s({__name:"Two",setup:s=>(o(),(s,o)=>{const n=r("router-view");return t(),a("div",d,[e(n)])})});export{n as default};
